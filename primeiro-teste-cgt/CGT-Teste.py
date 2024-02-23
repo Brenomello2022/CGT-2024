@@ -27,11 +27,11 @@ texto = fonte.render("Player", True, BRANCO)
 # text_rect = texto.get_rect(center=(largura/2, 25)) # Parte de Cima
 # text_rect = texto.get_rect(center=(400, 575)) # Parte de Baixo
 
-# text_rect = texto.get_rect(center=(730, 300)) # Lado Direito
-# text_rect = texto.get_rect(center=(70, 300)) # Lado Esquerdo
+# text_rect = texto.get_rect(center=(740, 300)) # Lado Direito
+# text_rect = texto.get_rect(center=(55, 300)) # Lado Esquerdo
 
-# text_rect = texto.get_rect(center=(55, 25)) # Canto Superior Esquerdo
-# text_rect = texto.get_rect(center=(735, 30)) # Canto Superior Direito 
+# text_rect = texto.get_rect(center=(735, 25)) # Canto Superior Direito
+# text_rect = texto.get_rect(center=(55, 25)) # Canto Superior Esquerdo 
 
 # text_rect = texto.get_rect(center=(740, 570)) # Canto Inferior Direito
 # text_rect = texto.get_rect(center=(55, 570)) # Canto Inferior Esquerdo
