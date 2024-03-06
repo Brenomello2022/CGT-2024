@@ -24,7 +24,7 @@ VERDE = (0, 255, 0)
 tamanho_fonte = 50
 fonte = pygame.font.SysFont(None, tamanho_fonte)
 
-texto = fonte.render("ANTEDEGUEMON", True, BRANCO)
+texto = fonte.render("PLAYER", True, BRANCO)
 
 # Posicionamento do Texto.
 
@@ -75,24 +75,26 @@ while True:
     if texto_rect.right >= largura:
         velocidade_x = random.randint(-1, 1)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, AZUL)
+        texto = fonte.render("PLAYER", True, AZUL)
 
     if texto_rect.bottom >= altura:
         velocidade_x = random.randint(-1, 1)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, VERMELHO)
+        texto = fonte.render("PLAYER", True, VERMELHO)
 
     if texto_rect.left <= 0:
         velocidade_x = random.randint(-1, 1)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, VERDE)
+        texto = fonte.render("PLAYER", True, VERDE)
 
     if texto_rect.top <= 0:
         velocidade_x = random.randint(-1, 1)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, AMARELO)
+        texto = fonte.render("PLAYER", True, AMARELO)
 
     clock.tick(250)
     tela.fill(PRETO)
     tela.blit(texto, texto_rect)
     pygame.display.flip()
+
+    # Teste Avançado.

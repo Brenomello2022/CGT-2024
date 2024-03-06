@@ -24,7 +24,7 @@ VERDE = (0, 255, 0)
 tamanho_fonte = 50
 fonte = pygame.font.SysFont(None, tamanho_fonte)
 
-texto = fonte.render("ANTEDEGUEMON", True, BRANCO)
+texto = fonte.render("PLAYER", True, BRANCO)
 
 # Posicionamento do Texto.
 
@@ -88,26 +88,48 @@ while True:
     texto_rect.y += velocidade_y
 
     if texto_rect.right >= largura:
-        velocidade_x = random.randint(-1, 1)
+        velocidade_x = random.randint(-1, 0)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, AZUL)
+        cor_texto = (
+                    random.randint(0, 255),
+                    random.randint(0, 255), 
+                    random.randint(0, 255)
+                    )
+        texto = fonte.render("PLAYER", True, cor_texto)
 
     if texto_rect.bottom >= altura:
-        velocidade_x = random.randint(-1, 1)
+        velocidade_x = random.randint( 0, 1)
         velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, VERMELHO)
+        cor_texto = (
+                    random.randint(0, 255),
+                    random.randint(0, 255),
+                    random.randint(0, 255)
+                    )
+        texto = fonte.render("PLAYER", True, cor_texto)
 
     if texto_rect.left <= 0:
         velocidade_x = random.randint(-1, 1)
-        velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, VERDE)
+        velocidade_y = random.randint(-1, 0)
+        cor_texto = (
+                    random.randint(0, 255),
+                    random.randint(0, 255), 
+                    random.randint(0, 255)
+                    )
+        texto = fonte.render("PLAYER", True, cor_texto)
 
     if texto_rect.top <= 0:
         velocidade_x = random.randint(-1, 1)
-        velocidade_y = random.randint(-1, 1)
-        texto = fonte.render("ANTEDEGUEMON", True, AMARELO)
+        velocidade_y = random.randint( 0, 1)
+        cor_texto = (
+                    random.randint(0, 255), 
+                    random.randint(0, 255),
+                    random.randint(0, 255)
+                    )
+        texto = fonte.render("PLAYER", True, cor_texto)
 
-    clock.tick(250)
+    clock.tick(350)
     tela.fill(PRETO)
     tela.blit(texto, texto_rect)
     pygame.display.flip()
+
+    # Teste Completo Finalizado.

@@ -19,7 +19,7 @@ BRANCO = (255, 255, 255)
 tamanho_fonte = 50
 fonte = pygame.font.SysFont(None, tamanho_fonte)
 
-texto = fonte.render("Player", True, BRANCO)
+texto = fonte.render("PLAYER", True, BRANCO)
 
 # text_rect = texto.get_rect(center=(largura/2, altura/2)) # Centro
 # text_rect = texto.get_rect(center=(largura/2, 25)) # Topo
@@ -42,3 +42,5 @@ while True:
     tela.fill(PRETO)
     tela.blit(texto, text_rect)
     pygame.display.flip()
+
+# Teste Inicial.
