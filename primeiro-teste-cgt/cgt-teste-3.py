@@ -57,7 +57,7 @@ while velocidade_y == 0:
 
 # Posicionamento Avançado.
 
-# texto_rect = texto.get_rect() 
+# texto_rect = texto.get_rect() # Função.
 
 # Canto Superior Esquerdo
 # texto_rect.left = 0
