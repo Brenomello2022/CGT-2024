@@ -32,9 +32,6 @@ texto_rect = texto.get_rect(center=(largura/2, altura/2)) # Centro
 
 clock = pygame.time.Clock() 
 
-# velocidade_x = 1
-# velocidade_y = 1
-
 velocidade_x = random.randint(-1, 1)
 velocidade_y = random.randint(-1, 1)
 
