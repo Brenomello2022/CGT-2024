@@ -7,11 +7,11 @@ import random
 
 class MovText:
     def __init__(self, texto, fonte_tamanho, largura, altura):
-        self.font = pygame.font.SysFont(None, fonte_tamanho)
+        self.fonte = pygame.font.SysFont(None, fonte_tamanho)
         self.texto = texto
         self.largura = largura
         self.altura = altura
-        self.texto_surf = self.render(texto, True, (255, 255, 255))
+        self.texto_surf = self.fonte.render(texto, True, (255, 255, 255))
         self.rect = self.texto_surf.get_rect(center=(largura / 2, altura / 2))
 
         self.velocidade_x = self.gerar_numero_nao_zero()
@@ -44,7 +44,7 @@ class MovText:
 
         if self.rect.bottom >= self.altura:
              self.velocidade_x = random.randint(-1, 1)
-             self.velocidade_y = random.randint(-1, 1)
+             self.velocidade_y = random.randint(-1, 0)
              self.change_color()
 
     def change_color(self):
@@ -53,6 +53,4 @@ class MovText:
                     random.randint(0, 255),
                     random.randint(0, 255)
                     )
-         self.texto_surf = self.font.render(self.texto, True, cor_texto)
-         
-
+         self.texto_surf = self.fonte.render(self.texto, True, cor_texto)

@@ -5,7 +5,10 @@ import sys
 
 from mecmov import MovText
 
+# Definições da Classe.
+
 class Game:
+
     def __init__(self):
         pygame.init()
         self.largura = 800
@@ -20,13 +23,13 @@ class Game:
         while rodando:
             for evento in pygame.event.get():
                 if evento.type == pygame.QUIT:
-                    rodando =  False
+                    rodando = False
 
             self.MovText.move()
             self.tela.fill((0, 0, 0))
             self.tela.blit(self.MovText.texto_surf, self.MovText.rect)
             pygame.display.flip()
-            self.clock.tick(60)
+            self.clock.tick(320)
 
         pygame.quit()
         sys.exit()
