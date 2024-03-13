@@ -18,10 +18,10 @@ class MovText:
         self.velocidade_y = self.gerar_numero_nao_zero()
 
     def gerar_numero_nao_zero(self):
-            numero = 0
-            while numero == 0:
-                numero = random.randint(-1, 1)
-            return numero
+        numero = 0
+        while numero == 0:
+            numero = random.randint(-1, 1)
+        return numero
     
     def move(self):
         self.rect.x += self.velocidade_x
@@ -49,8 +49,8 @@ class MovText:
 
     def change_color(self):
          cor_texto = (
-                    random.randint(0, 255), 
-                    random.randint(0, 255),
-                    random.randint(0, 255)
-                    )
+            random.randint(0, 255), 
+            random.randint(0, 255),
+            random.randint(0, 255),
+        )
          self.texto_surf = self.fonte.render(self.texto, True, cor_texto)

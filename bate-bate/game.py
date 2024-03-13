@@ -13,13 +13,13 @@ class Game:
         pygame.init()
         self.largura = 800
         self.altura = 600
-        self.tela = pygame.display.set_mode((self.altura, self.largura))
+        self.tela = pygame.display.set_mode((self.largura, self.altura))
         pygame.display.set_caption("Bate-Bate")
         self.clock = pygame.time.Clock()
         self.MovText = MovText("PLAYER", 50, self.largura, self.altura)
 
     def run(self):
-        rodando =  True
+        rodando = True
         while rodando:
             for evento in pygame.event.get():
                 if evento.type == pygame.QUIT:
