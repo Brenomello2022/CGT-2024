@@ -1,3 +1,15 @@
-Criando mecânicas.
+Projeto "Bate-Bate", baseado no famoso display de DVD que quando batia em qualquer direção, trocava de cor aleatoriamente.
 
-Projeto dividido em três configurações: Mecânica de movimentos, Main e Game.
+Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um desses elementos possui seus respectivos "Atributos" e "Métodos".
+
+------------------------------------------------------
+
+<h1>Estrutura das Mecânicas.<h1>
+
+<div align=center>
+
+<img height="200em" src="./img/estrutura.png">
+
+</div>
+
+------------------------------------------------------
