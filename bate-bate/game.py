@@ -5,10 +5,9 @@ import sys
 
 from mecmov import MovText
 
-# Definições da Classe.
+# Definições da classe, onde serão declaradas as variaveis que vão ser usadas para a lógica.
 
 class Game:
-
     def __init__(self):
         pygame.init()
         self.largura = 800

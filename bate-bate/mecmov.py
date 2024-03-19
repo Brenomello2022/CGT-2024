@@ -3,7 +3,7 @@
 import pygame
 import random
 
-# Classe e Definições.
+# Criado uma class e suas definições, bem como suas variaveis e regras.
 
 class MovText:
     def __init__(self, texto, fonte_tamanho, largura, altura):
