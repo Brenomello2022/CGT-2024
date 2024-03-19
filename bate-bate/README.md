@@ -13,3 +13,15 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 </div>
 
 ------------------------------------------------------
+
+------------------------------------------------------
+
+<h1>Classe Movendo Texto (mecmov).<h1>
+
+<div align=center>
+
+a
+
+</div>
+
+------------------------------------------------------
