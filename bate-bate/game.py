@@ -5,7 +5,8 @@ import sys
 
 from mecmov import MovText
 
-# Definições da classe, onde serão declaradas as variaveis que vão ser usadas para a lógica.
+# Definições da classe, onde serão declaradas seus atributos e métodos, e suas variaveis que vão ser usadas para a lógica,
+# alguns: largura, altura, tela, taxa de dados, um objeto MovText (que vem da classe movendo texto (arquivo mecmov.)).
 
 class Game:
     def __init__(self):

@@ -3,7 +3,9 @@
 import pygame
 import random
 
-# Criado uma class e suas definições, bem como suas variaveis e regras.
+# Criado uma classe e suas definições, bem como suas variaveis e regras, e por fim, um loop indicando qual direção
+# ele deve seguir, sua velocidade, sua cor, altura, largura, tamanho da fonte, tipo de texto, superficie do
+# texto.
 
 class MovText:
     def __init__(self, texto, fonte_tamanho, largura, altura):
