@@ -58,8 +58,6 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 
 <h1>Classe Game (arquivo: game.py) (classe: Game).<h1>
 
-<div align=center>
-
 <h3>Atributos.</h3>
 
 <p>self.largura: Define a largura da janela do jogo, que foi determinada com 800 pixels.</p>
@@ -78,15 +76,11 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 
 <p>run: Este método executa o jogo, aplicando a lógica que foi declarada.</p>
 
-</div>
-
 ------------------------------------------------------
 
 ------------------------------------------------------
 
 <h1>Classe Main (arquivo: main.py) (classe: Main).<h1>
-
-<div align=center>
 
 <h3>Atributos.</h3>
 
@@ -95,8 +89,6 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 <h3>Métodos.</h3>
 
 <p>__name__: Este método executa o run da classe Game, e então o jogo começa.</p>
-
-</div>
 
 ------------------------------------------------------
 
