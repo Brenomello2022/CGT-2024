@@ -12,7 +12,7 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 
 <h1>Estrutura do Diagrama.<h1>
 
-<img height="200em" src="./img/diagrama-uml.png" align-items=center>
+<center> <img height="200em" src="./img/diagrama-uml.png">
 
 ------------------------------------------------------
 
