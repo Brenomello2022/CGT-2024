@@ -24,11 +24,9 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 
 <h1>Classe Movendo Texto (arquivo: mecmov.py) (classe: MovText).<h1>
 
-<div align=center>
-
 <h3>Atributos.</h3>
 
-self.fonte: Define o tipo de texto, o tamanho da fonte do texto e o estilo visual que vai aparecer para o usuário.
+<p>self.fonte: Define o tipo de texto, o tamanho da fonte do texto e o estilo visual que vai aparecer para o usuário.</p>
 
 <p>self.texto: Define o texto que será exibido na tela do jogo.</p>
 
@@ -53,8 +51,6 @@ self.fonte: Define o tipo de texto, o tamanho da fonte do texto e o estilo visua
 <p>move: Método usado para mover o texto na tela, e quando ele (texto), toca qualquer uma das bordas, ele troca de cor de forma aleatória.</p>
 
 <p>change_color: Este elemento faz o texto trocar de cor de forma aleatória, conforme e bate nas bordas da janela.</p>
-
-</div>
 
 ------------------------------------------------------
 
