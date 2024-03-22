@@ -28,7 +28,7 @@ Este projeto possui 3 partes, a Mecânica de Movimentos, Game e Main. Cada um de
 
 <h3>Atributos.</h3>
 
-<p>self.fonte: Define o tipo de texto, o tamanho da fonte do texto e o estilo visual que vai aparecer para o usuário.</p>
+self.fonte: Define o tipo de texto, o tamanho da fonte do texto e o estilo visual que vai aparecer para o usuário.
 
 <p>self.texto: Define o texto que será exibido na tela do jogo.</p>
 
