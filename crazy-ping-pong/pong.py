@@ -1,5 +1,6 @@
 # Imports.
 
+import random
 import pygame
 import sys
 
@@ -39,8 +40,13 @@ bola_y = altura // 2 - tam_bola // 2
 
 # Velocidade da raquete.
 
-raq_pl1_dy = 5
+raq_pl1_dy = 5  # dy significa velocidade
 raq_pc_dy = 5
+
+# Velocidade da bola.
+
+velocidade_bx = 3
+velocidade_by = 3
 
 clock = pygame.time.Clock()
 
@@ -53,6 +59,64 @@ while rodando:
             rodando = False
 
     screen.fill(PRETO)
+
+    # Movendo a bola.
+
+    bola_x += velocidade_bx
+    bola_y += velocidade_by
+
+    # Retângulos de colisão.
+
+    bola_rect = pygame.Rect(bola_x, bola_y, tam_bola, tam_bola)
+    raq_pc_rect = pygame.Rect(pc_x, pc_y, raq_lar, raq_alt)
+    raq_player1_rect = pygame.Rect(player1_x, player1_y, raq_lar, raq_alt)
+    
+    # Colisão da bola com a raquete do pc e a raquete do player.
+
+    if bola_rect.colliderect(raq_pc_rect) or bola_rect.colliderect(raq_player1_rect):
+        velocidade_bx = - velocidade_bx
+
+    # Colisão da bola com as bordas da tela.
+    
+    if bola_y <= 0 or bola_y >= altura - tam_bola:
+        velocidade_by = - velocidade_by
+    
+    # Posicionar a bola no inicio do jogo.
+        
+    if bola_x <= 0 or bola_x >= largura - tam_bola:
+        bola_x = largura // 2 - tam_bola // 2
+        bola_y = altura // 2 - tam_bola // 2
+        velocidade_bx = - velocidade_bx
+    
+    # Movendo a raquete do PC para seguir a bola.
+        
+    if pc_y + raq_alt // 2 < bola_y:
+        pc_y += raq_pc_dy
+    elif pc_y + raq_alt // 2 > bola_y:
+        pc_y -= raq_pc_dy
+    
+    # Evitar que a raquete do PC saia da área.
+    
+    if pc_y < 0:
+        pc_y = 0
+    elif pc_y > altura - raq_alt:
+        pc_y = altura - raq_alt
+
+    # Deixando a raquete do player automatica.
+        
+    if player1_y + raq_alt // 2 < bola_y:
+        player1_y += raq_pl1_dy
+    elif player1_y + raq_alt // 2 > bola_y:
+        player1_y -= raq_pl1_dy
+    
+    # Evitar que a raquete do player saia da área.
+
+    if player1_y < 0:
+        player1_y = 0
+    elif player1_y > altura - raq_alt:
+        player1_y = altura - raq_alt
+
+    # Deixando o movimento das raquetes aleatório.
 
     pygame.draw.rect(screen, BRANCO, (pc_x, pc_y, raq_lar,raq_alt))             # Desenhando a raquete esquerda.
     pygame.draw.rect(screen, BRANCO, (player1_x, player1_y, raq_lar, raq_alt))  # Desenhando a raquete direita.
@@ -67,10 +131,7 @@ while rodando:
 
     pygame.display.flip()
 
-    clock.tick(120)
-
-    
+    clock.tick(500)
 
 pygame.quit()
 sys.exit()
-
