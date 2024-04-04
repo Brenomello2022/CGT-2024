@@ -48,11 +48,58 @@ raq_pc_dy = 5
 velocidade_bx = 3
 velocidade_by = 3
 
+# Define o Score (Pontuação).
+
+score_player1 = 0
+score_pc = 0
+
+# Configuração da fonte.
+
+font_file = "crazy-ping-pong/font/PressStart2P-Regular.ttf"
+font = pygame.font.Font(font_file, 20)
+
+# Taxa de quadros.
+
 clock = pygame.time.Clock()
+
+# Criando o Menu do Jogo
+
+rodando = False
+
+def menu_principal():
+    global rodando
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    rodando = True
+                    return
+
+        # Renderiza o texto do menu.
+                    
+        screen.fill(PRETO)
+        texto_menu = font.render("Ping Pong", True, BRANCO)
+        texto_menu_rect = texto_menu.get_rect(center=(largura // 2, altura // 2))   
+        screen.blit(texto_menu, texto_menu_rect)
+
+        tempo = pygame.time.get_ticks()
+
+        # Pressione espaço para jogar.
+
+        if tempo % 2000 < 1000:
+            texto_iniciar = font.render("Pressione Espaço", True, BRANCO)
+            texto_iniciar_rect = texto_menu.get_rect(center=(largura // 2, 450))
+            screen.blit(texto_iniciar, texto_iniciar_rect)
+
+        pygame.display.flip()
+    
+menu_principal()
 
 # Mecânica do Loop Infinito.
 
-rodando = True
 while rodando:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -83,11 +130,20 @@ while rodando:
     
     # Posicionar a bola no inicio do jogo.
         
-    if bola_x <= 0 or bola_x >= largura - tam_bola:
+    if bola_x <= 0:
         bola_x = largura // 2 - tam_bola // 2
         bola_y = altura // 2 - tam_bola // 2
         velocidade_bx = - velocidade_bx
+        score_player1 += 1
+        print(f"Score Player1: {score_player1}")
     
+    if bola_x >= largura - tam_bola:
+        bola_x = largura // 2 - tam_bola // 2
+        bola_y = altura // 2 - tam_bola // 2
+        velocidade_bx = - velocidade_bx
+        score_pc += 1
+        print(f"Score PC: {score_pc}")
+
     # Movendo a raquete do PC para seguir a bola.
         
     if pc_y + raq_alt // 2 < bola_y:
@@ -102,25 +158,36 @@ while rodando:
     elif pc_y > altura - raq_alt:
         pc_y = altura - raq_alt
 
+    # Mostrando o Score do Jogo.
+
+    fonte_score = pygame.font.Font(font_file, 16)        
+    score_texto = font.render(
+        f"Score PC: {score_pc}        Score Player1: {score_player1}", True, BRANCO
+    )
+    score_rect = score_texto.get_rect(center=(largura // 2, 30))
+
+    screen.blit(score_texto, score_rect)
+
     # Deixando a raquete do player automatica.
         
-    if player1_y + raq_alt // 2 < bola_y:
-        player1_y += raq_pl1_dy
-    elif player1_y + raq_alt // 2 > bola_y:
-        player1_y -= raq_pl1_dy
+    # if player1_y + raq_alt // 2 < bola_y:
+    #    player1_y += raq_pl1_dy
+    # elif player1_y + raq_alt // 2 > bola_y:
+    #    player1_y -= raq_pl1_dy
     
     # Evitar que a raquete do player saia da área.
 
-    if player1_y < 0:
-        player1_y = 0
-    elif player1_y > altura - raq_alt:
-        player1_y = altura - raq_alt
+    # if player1_y < 0:
+    #    player1_y = 0
+    # elif player1_y > altura - raq_alt:
+    #    player1_y = altura - raq_alt
 
     # Deixando o movimento das raquetes aleatório.
 
-    pygame.draw.rect(screen, BRANCO, (pc_x, pc_y, raq_lar,raq_alt))             # Desenhando a raquete esquerda.
-    pygame.draw.rect(screen, BRANCO, (player1_x, player1_y, raq_lar, raq_alt))  # Desenhando a raquete direita.
-    pygame.draw.ellipse(screen, BRANCO, (bola_x, bola_y, tam_bola, tam_bola))   # Desenhando a bola.
+    pygame.draw.rect(screen, BRANCO, (pc_x, pc_y, raq_lar,raq_alt))                   # Desenhando a raquete esquerda.
+    pygame.draw.rect(screen, BRANCO, (player1_x, player1_y, raq_lar, raq_alt))        # Desenhando a raquete direita.
+    pygame.draw.ellipse(screen, BRANCO, (bola_x, bola_y, tam_bola, tam_bola))         # Desenhando a bola.
+    pygame.draw.aaline(screen, BRANCO, (largura // 2, 0), (largura // 2, altura))     # Desenhando a linha do meio
 
     keys = pygame.key.get_pressed()
 
@@ -131,7 +198,7 @@ while rodando:
 
     pygame.display.flip()
 
-    clock.tick(500)
+    clock.tick(60)
 
 pygame.quit()
 sys.exit()
