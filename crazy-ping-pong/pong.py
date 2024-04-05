@@ -91,7 +91,7 @@ def menu_principal():
 
         if tempo % 2000 < 1000:
             texto_iniciar = font.render("Pressione Espaço", True, BRANCO)
-            texto_iniciar_rect = texto_menu.get_rect(center=(largura // 2, 450))
+            texto_iniciar_rect = texto_menu.get_rect(center=(325, 400))
             screen.blit(texto_iniciar, texto_iniciar_rect)
 
         pygame.display.flip()
