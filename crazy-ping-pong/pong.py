@@ -53,8 +53,9 @@ font = pygame.font.Font(font_file, 20)
 
 mixer.music.load("crazy-ping-pong/audios/music2.mp3")
 mixer.music.play(-1)
-som = mixer.Sound("crazy-ping-pong/audios/SoundA.wav")
+mixer.music.set_volume(0.5)
 
+som = mixer.Sound("crazy-ping-pong/audios/SoundA.wav")
 
 # Taxa de quadros.
 
