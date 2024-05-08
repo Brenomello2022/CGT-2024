@@ -4,6 +4,8 @@ import random
 import pygame
 import sys
 
+from pygame import mixer
+
 # Configurações iniciais, variaveis e definições.
 
 pygame.init()
@@ -46,6 +48,13 @@ controle = False
 
 font_file = "crazy-ping-pong/font/PressStart2P-Regular.ttf"
 font = pygame.font.Font(font_file, 20)
+
+# Definindo sons.
+
+mixer.music.load("crazy-ping-pong/audios/music2.mp3")
+mixer.music.play(-1)
+som = mixer.Sound("crazy-ping-pong/audios/SoundA.wav")
+
 
 # Taxa de quadros.
 
