@@ -57,8 +57,6 @@ mixer.music.set_volume(0.5)
 
 som = mixer.Sound("crazy-ping-pong/audios/SoundA.wav")
 
-clock = pygame.time.Clock()
-
 # Taxa de quadros.
 
 clock = pygame.time.Clock()
