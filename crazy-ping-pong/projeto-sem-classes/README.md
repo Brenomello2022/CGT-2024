@@ -1,1 +1,1 @@
-Projeto ping-pong com apenas um arquivo.
+Projeto Ping-Pong com apenas um arquivo.
