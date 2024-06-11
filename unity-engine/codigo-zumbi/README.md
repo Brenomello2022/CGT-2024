@@ -1,1 +1,1 @@
-Código utilizado para fazer zumbi se movimentar.
+Código utilizado para fazer o zumbi se movimentar.
