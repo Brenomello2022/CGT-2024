@@ -1,1 +1,1 @@
-Projeto Ping-Pong com apenas um arquivo.
+Projeto Ping-Pong com apenas um arquivo protótipo com uma versao em portugues (variáveis e definicoes), e outra com uma versão em inglês (variáveis e definições).
