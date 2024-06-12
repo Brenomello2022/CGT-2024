@@ -6,6 +6,8 @@ import random
 from pygame import mixer
 from entities import Racket, Ball
 
+# Definindo as configurações de fonte, largura, altura, controle etc.
+
 class Game:
     def __init__(self, screen, width, height):
         self.screen = screen
@@ -26,6 +28,8 @@ class Game:
         self.score_pc = 0
 
         self.sound = mixer.Sound("crazy-ping-pong/audios/SoundA.wav")
+
+    # Menu principal.
 
     def main_menu(self):
         while True:
@@ -51,6 +55,8 @@ class Game:
 
             pygame.display.flip()
 
+    # Fim do jogo.
+
     def end_game(self):
         while True:
             for event in pygame.event.get():
@@ -71,6 +77,8 @@ class Game:
 
             pygame.display.flip()
 
+    # Reiniciando o jogo.
+
     def reset_game(self):
         self.racket_player1.reset(self.width - 20, self.height // 2 - 30)
         self.racket_pc.reset(10, self.height // 2 - 30)
@@ -88,6 +96,7 @@ class Game:
         self.ball.move()
 
         # Colisões e lógica de jogo.
+
         if self.ball.rect.colliderect(self.racket_pc.rect) or self.ball.rect.colliderect(self.racket_player1.rect):
             self.ball.bounce()
             self.sound.play()
@@ -121,11 +130,15 @@ class Game:
         pygame.display.flip()
         self.clock.tick(60)
 
+    # Pontuação do PC e do Player.
+
     def display_score(self):
         font_score = pygame.font.Font(self.font_file, 16)
         score_text = font_score.render(f"Score PC: {self.score_pc}    Score Player1: {self.score_player1}", True, (255, 255, 255))
         score_rect = score_text.get_rect(center=(self.width // 2, 30))
         self.screen.blit(score_text, score_rect)
+
+    # Desenhando os elementos na tela.
 
     def draw_elements(self):
         pygame.draw.rect(self.screen, (255, 255, 255), self.racket_pc.rect)

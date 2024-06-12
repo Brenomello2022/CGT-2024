@@ -23,6 +23,8 @@ mixer.music.set_volume(0.05)
 game = Game(screen, width, height)
 game.main_menu()
 
+# Loop que controla a execução contínua do jogo, tambem faz o jogo terminar.
+
 while game.running:
     game.play()
     if not game.control:
