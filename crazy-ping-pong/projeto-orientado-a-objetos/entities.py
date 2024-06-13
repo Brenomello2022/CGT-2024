@@ -3,7 +3,8 @@
 import pygame
 import random
 
-# Definindo as configurações de largura, altura, velocidade etc. , , , reset para a bola voltar, 
+# Definindo as configurações de largura, altura, velocidade etc.
+
 class Racket:
     def __init__(self, x, y, width, height, dy, screen_height):
         self.x = x
