@@ -9,3 +9,9 @@ início do jogo e da tela do jogo, a música de fundo do jogo e por último a l�
 arquivo game, e suas definições necessárias para a lógica funcionar.
 
 3 - Arquivo entidades: Aqui estão declaradas os imports das bibliotecas, suas classes, com suas definições para a lógica funcionar.
+
+------------------------------------------------------
+
+Thank you so much for reading, have a nice day! :D
+
+------------------------------------------------------
