@@ -1,0 +1,1 @@
+Código usado para fazer o zumbi andar, e atacar quando a tecla "Espaço" for pressionada.
