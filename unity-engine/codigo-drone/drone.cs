@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class DroneMovement : MonoBehaviour
 {
     public Transform target;  // O destino do drone
+
     public float speed = 1.0f;  // Velocidade de movimento do drone
+
     public float rotationSpeed = 5.0f;  // Velocidade de rotação do drone
+
     public float stoppingDistance = 1.0f;  // Distância mínima do alvo para parar
 
     void Update()
     {
+
         MoveToTarget();
+        
     }
 
   void MoveToTarget()
