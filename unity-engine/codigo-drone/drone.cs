@@ -25,6 +25,7 @@ public class DroneMovement : MonoBehaviour
         {
             // Calcular a direção para o alvo
             Vector3 direction = (target.position - transform.position).normalized;
+            
             // Calcular a distância até o alvo
             float distance = Vector3.Distance(transform.position, target.position);
 
